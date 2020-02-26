@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.bw</groupId>
+  <artifactId>rikao1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+ <!--  依赖的jar -->
+  <dependencies>
+  	<dependency>
+  		<!-- 组织 -->
+  		<groupId>junit</groupId>
+  		<!-- 项目名 -->
+  		<artifactId>junit</artifactId>
+  		<!-- 版本号 -->
+  		<version>4.12</version>
+  	</dependency>
+  </dependencies>
+</project>

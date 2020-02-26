@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.bw.dao.MovieMapper">
+  	<select id="query" resultType="movie">
+  		select * from movie
+  		<where>
+  			<if test="name!=null and name!='' ">
+  				and name like concat('%',#{name},'%')
+  			</if>
+  			<if test="startTime!=null and startTime!='' ">
+  				and time >= #{startTime}
+  			</if>
+  			<if test="endTime!=null and endTime!='' ">
+  				and time &lt;= #{endTime}
+  			</if>
+  			<if test="direct!=null and direct!='' ">
+  				and direct like concat('%',#{direct},'%')
+  			</if>
+  			<if test="startPrice!=null and startPrice!='' ">
+  				and price >= #{startPrice}
+  			</if>
+  			<if test="endPrice!=null and endPrice!='' ">
+  				and price &lt;= #{endPrice}
+  			</if>
+  			<if test="years!=null and years!='' ">
+  				and years =#{years}
+  			</if>
+  			<if test="startTimelong!=null and startTimelong!='' ">
+  				and timelong >=#{startTimelong}
+  			</if>
+  			<if test="endTimelong!=null and endTimelong!='' ">
+  				and timelong &lt;= #{endTimelong}
+  			</if>
+  		</where>
+  		
+  		<if test="orderName!=null and orderName!='' ">
+  			order by ${orderName}	
+  			<if test="orderMethod!=null and orderMethod!='' ">
+  				${orderMethod}
+  			</if>
+  		</if>
+  		
+  	</select>
+  	<delete id="del">
+  		delete from movie where id in(${value})
+  	</delete>
+  </mapper>
